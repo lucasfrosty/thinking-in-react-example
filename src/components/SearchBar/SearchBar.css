@@ -1,0 +1,15 @@
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form__text {
+  width: 30%;
+}
+
+.checkbox-container {
+  margin-top: 10px;
+}
+
+.form__checkbox {
+}

@@ -1,10 +1,5 @@
-import React, { Fragment } from "react";
+import React from "react";
 import { render } from "react-dom";
-
-const App = () => (
-  <Fragment>
-    <h1>:)</h1>
-  </Fragment>
-);
+import App from "./components/App";
 
 render(<App />, document.getElementById("root"));
