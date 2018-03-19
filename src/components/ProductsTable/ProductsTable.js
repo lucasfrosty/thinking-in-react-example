@@ -1,4 +1,5 @@
 import React from 'react';
+import uuidv4 from 'uuid/v4';
 import './ProductsTable.css';
 
 import Products from '../Products';
@@ -13,6 +14,7 @@ const ProductsTable = ({ showOnlyProductsInStock, inputValue }) => {
 
     return (
       <Products
+        key={uuidv4()}
         category={category}
         showOnlyProductsInStock={showOnlyProductsInStock}
         productsForEachCategory={productsForEachCategory}

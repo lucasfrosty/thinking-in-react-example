@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react';
+import uuidv1 from 'uuid/v1';
 import './Products.css';
 
 const Products = ({
@@ -23,7 +24,7 @@ const Products = ({
           if (showOnlyProductsInStock && !productFiltered.stocked) return;
 
           return (
-            <tr>
+            <tr key={uuidv1()}>
               <td className={productFiltered.stocked || 'red'}>
                 {productFiltered.name}
               </td>
