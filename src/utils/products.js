@@ -6,6 +6,18 @@ export const products = [
     name: 'Football',
   },
   {
+    category: 'Jewels',
+    price: '$59.99',
+    stocked: false,
+    name: 'Ruby',
+  },
+  {
+    category: 'Electronics',
+    price: '$399.99',
+    stocked: false,
+    name: 'iPhone 5',
+  },
+  {
     category: 'Sporting Goods',
     price: '$9.99',
     stocked: true,
@@ -24,10 +36,10 @@ export const products = [
     name: 'iPod Touch',
   },
   {
-    category: 'Electronics',
-    price: '$399.99',
-    stocked: false,
-    name: 'iPhone 5',
+    category: 'Jewels',
+    price: '$199.99',
+    stocked: true,
+    name: 'Diamond',
   },
   { category: 'Electronics', price: '$199.99', stocked: true, name: 'Nexus 7' },
 ];

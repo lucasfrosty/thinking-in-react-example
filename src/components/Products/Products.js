@@ -1,15 +1,18 @@
 import React, { Fragment } from 'react';
+import './Products.css';
 
-const Products = () => (
+const Products = ({ category, productsForEachCategory }) => (
   <Fragment>
     <tr>
-      <th colSpan="2">Spoorting Goods</th>
+      <th colSpan="2">{category}</th>
     </tr>
 
-    <tr>
-      <td>Footbal</td>
-      <td>$49.99</td>
-    </tr>
+    {productsForEachCategory.map(product => (
+      <tr>
+        <td className={product.stocked || 'red'}>{product.name}</td>
+        <td>{product.price}</td>
+      </tr>
+    ))}
   </Fragment>
 );
 

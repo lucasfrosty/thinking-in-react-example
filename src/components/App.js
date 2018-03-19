@@ -2,8 +2,6 @@ import React, { Fragment, Component } from 'react';
 import SearchBar from './SearchBar';
 import ProductsTable from './ProductsTable';
 
-import { products, categories } from '../utils/products';
-
 class App extends Component {
   state = {
     showOnlyProductsInStock: false,
@@ -23,10 +21,7 @@ class App extends Component {
           showOnlyProductsInStock={showOnlyProductsInStock}
           toggleShowProductsInStock={this.toggleShowProductsInStock}
         />
-        <ProductsTable
-          showOnlyProductsInStock={showOnlyProductsInStock}
-          categories={categories}
-        />
+        <ProductsTable showOnlyProductsInStock={showOnlyProductsInStock} />
       </Fragment>
     );
   }
