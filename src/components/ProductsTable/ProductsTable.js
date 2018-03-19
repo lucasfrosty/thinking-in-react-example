@@ -5,7 +5,7 @@ import Products from '../Products';
 
 import { products, categories } from '../../utils/products';
 
-const ProductsTable = () => {
+const ProductsTable = ({ showOnlyProductsInStock }) => {
   const renderProducts = categories.map(category => {
     const productsForEachCategory = products.filter(
       prod => prod.category === category,
@@ -14,6 +14,7 @@ const ProductsTable = () => {
     return (
       <Products
         category={category}
+        showOnlyProductsInStock={showOnlyProductsInStock}
         productsForEachCategory={productsForEachCategory}
       />
     );
