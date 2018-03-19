@@ -6,25 +6,36 @@ const Products = ({
   productsForEachCategory,
   showOnlyProductsInStock,
   inputValue,
-}) => (
-  <Fragment>
-    <tr>
-      <th colSpan="2">{category}</th>
-    </tr>
+}) => {
+  const productsFiltered = productsForEachCategory.filter(
+    product =>
+      product.name.toUpperCase().indexOf(inputValue.toUpperCase()) !== -1,
+  );
 
-    {productsForEachCategory.map(product => {
-      if (showOnlyProductsInStock && !product.stocked) return;
+  if (productsFiltered.length > 0) {
+    return (
+      <div className="products-container">
+        <tr>
+          <th colSpan="2">{category}</th>
+        </tr>
 
-      if (product.name.toUpperCase().indexOf(inputValue.toUpperCase()) !== -1) {
-        return (
-          <tr>
-            <td className={product.stocked || 'red'}>{product.name}</td>
-            <td>{product.price}</td>
-          </tr>
-        );
-      }
-    })}
-  </Fragment>
-);
+        {productsFiltered.map(productFiltered => {
+          if (showOnlyProductsInStock && !productFiltered.stocked) return;
+
+          return (
+            <tr>
+              <td className={productFiltered.stocked || 'red'}>
+                {productFiltered.name}
+              </td>
+              <td>{productFiltered.price}</td>
+            </tr>
+          );
+        })}
+      </div>
+    );
+  }
+
+  return null;
+};
 
 export default Products;
