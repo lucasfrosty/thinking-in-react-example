@@ -1,4 +1,4 @@
-export default [
+export const products = [
   {
     category: 'Sporting Goods',
     price: '$49.99',
@@ -31,3 +31,10 @@ export default [
   },
   { category: 'Electronics', price: '$199.99', stocked: true, name: 'Nexus 7' },
 ];
+
+const cat = new Map();
+products.forEach(prod => {
+  cat.set(prod.category, prod.category);
+});
+
+export const categories = [...cat.keys()];
