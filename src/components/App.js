@@ -5,6 +5,7 @@ import ProductsTable from './ProductsTable';
 class App extends Component {
   state = {
     showOnlyProductsInStock: false,
+    inputValue: '',
   };
 
   toggleShowProductsInStock = () => {
@@ -13,15 +14,23 @@ class App extends Component {
     }));
   };
 
+  changeInputValue = inputValue => {
+    this.setState({ inputValue });
+  };
+
   render() {
-    const { showOnlyProductsInStock } = this.state;
+    const { showOnlyProductsInStock, inputValue } = this.state;
     return (
       <Fragment>
         <SearchBar
           showOnlyProductsInStock={showOnlyProductsInStock}
+          changeInputValue={this.changeInputValue}
           toggleShowProductsInStock={this.toggleShowProductsInStock}
         />
-        <ProductsTable showOnlyProductsInStock={showOnlyProductsInStock} />
+        <ProductsTable
+          inputValue={inputValue}
+          showOnlyProductsInStock={showOnlyProductsInStock}
+        />
       </Fragment>
     );
   }

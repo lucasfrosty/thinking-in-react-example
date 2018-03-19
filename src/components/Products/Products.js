@@ -5,6 +5,7 @@ const Products = ({
   category,
   productsForEachCategory,
   showOnlyProductsInStock,
+  inputValue,
 }) => (
   <Fragment>
     <tr>
@@ -14,12 +15,14 @@ const Products = ({
     {productsForEachCategory.map(product => {
       if (showOnlyProductsInStock && !product.stocked) return;
 
-      return (
-        <tr>
-          <td className={product.stocked || 'red'}>{product.name}</td>
-          <td>{product.price}</td>
-        </tr>
-      );
+      if (product.name.toUpperCase().indexOf(inputValue.toUpperCase()) !== -1) {
+        return (
+          <tr>
+            <td className={product.stocked || 'red'}>{product.name}</td>
+            <td>{product.price}</td>
+          </tr>
+        );
+      }
     })}
   </Fragment>
 );

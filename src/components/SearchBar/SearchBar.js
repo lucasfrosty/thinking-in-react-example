@@ -1,10 +1,23 @@
 import React, { Component } from 'react';
 import './SearchBar.css';
 
-const SearchBar = ({ showOnlyProductsInStock, toggleShowProductsInStock }) => {
+const SearchBar = ({
+  showOnlyProductsInStock,
+  toggleShowProductsInStock,
+  changeInputValue,
+}) => {
+  const onChangeHandler = e => {
+    changeInputValue(e.target.value);
+  };
+
   return (
     <form className="form">
-      <input type="text" className="form__text" placeholder="Search..." />
+      <input
+        type="text"
+        className="form__text"
+        onChange={onChangeHandler}
+        placeholder="Search..."
+      />
       <label className="checkbox-container">
         <input
           type="checkbox"
