@@ -44,9 +44,9 @@ export const products = [
   { category: 'Electronics', price: '$199.99', stocked: true, name: 'Nexus 7' },
 ];
 
-const cat = new Map();
+const cat = new Set();
 products.forEach(prod => {
-  cat.set(prod.category, prod.category);
+  cat.add(prod.category);
 });
 
-export const categories = [...cat.keys()];
+export const categories = [...cat];
