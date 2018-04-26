@@ -6,7 +6,7 @@ import Products from '../Products';
 
 import { products, categories } from '../../utils/products';
 
-const ProductsTable = ({ showOnlyProductsInStock, inputValue }) => {
+function ProductsTable({ showOnlyProductsInStock, inputValue }) {
   const renderProducts = categories.map(category => {
     const productsForEachCategory = products.filter(
       prod => prod.category === category,
@@ -33,6 +33,6 @@ const ProductsTable = ({ showOnlyProductsInStock, inputValue }) => {
       {renderProducts}
     </table>
   );
-};
+}
 
 export default ProductsTable;
